@@ -1,0 +1,28 @@
+import os
+
+def create_repository():
+    # Создаем директории для рецептов
+    recipe_directories = ['breakfast', 'appetizers', 'main_dishes', 'desserts', 'drinks']
+    for directory in recipe_directories:
+        os.makedirs(directory, exist_ok=True)
+
+    # Создаем директорию для изображений
+    os.makedirs('recipe_images', exist_ok=True)
+
+    # Создаем директорию для вкладов
+    os.makedirs('contributors', exist_ok=True)
+
+    # Создаем LICENSE файл
+    with open('LICENSE', 'w') as file:
+        file.write('Ваш текст лицензии здесь')
+
+    # Создаем README.md файл
+    with open('README.md', 'w') as file:
+        file.write('# Culinary Delights\n\n')
+        file.write('Добро пожаловать в репозиторий Culinary Delights!\n\n')
+        file.write('Здесь вы найдете разнообразные кулинарные рецепты.\n')
+        file.write('Пожалуйста, прочитайте [CONTRIBUTING.md](contributors/CONTRIBUTING.md),')
+        file.write('чтобы узнать, как вы можете внести свой вклад.\n')
+
+if __name__ == '__main__':
+    create_repository()
